@@ -1,5 +1,10 @@
 part of 'dashboard_bloc.dart';
 
-sealed class DashboardEvent extends Equatable {
-  const DashboardEvent();
+@immutable
+abstract class DashboardEvent {}
+
+class TabChange extends DashboardEvent {
+  final int tabIndex;
+
+  TabChange({required this.tabIndex});
 }

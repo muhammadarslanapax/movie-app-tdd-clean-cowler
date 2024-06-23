@@ -1,10 +1,12 @@
 part of 'dashboard_bloc.dart';
 
-sealed class DashboardState extends Equatable {
-  const DashboardState();
+@immutable
+abstract class DashboardState {
+  final int tabIndex;
+
+  const DashboardState({required this.tabIndex});
 }
 
-final class DashboardInitial extends DashboardState {
-  @override
-  List<Object> get props => [];
+class DashboardInitial extends DashboardState {
+  const DashboardInitial({required super.tabIndex});
 }
